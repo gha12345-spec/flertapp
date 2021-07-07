@@ -1,0 +1,715 @@
+#:import Clipboard kivy.core.clipboard.Clipboard
+WindowManager:
+    FirstWindow:
+    SecondWindow:
+
+
+
+<FirstWindow>:
+    name : "first_window"
+
+    id : first_window
+
+
+    FloatLayout:
+
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'BACH.jpg'
+
+
+
+
+        Label:
+            text : "Fully developped by Ghaly"
+            font_size : 8
+            pos_hint : {"x": 0.0005, "y": 0.48}
+            font_name : "verdana"
+            color : (0,0,0,1)
+        Label:
+            text : "Fully developped by Ghaly"
+            font_size : 8
+            pos_hint : {"x": 0.002, "y": 0.48}
+            font_name : "verdana"
+            color : (1,0,1,.9)
+
+
+        Label:
+            text : "use one of these pickups and ur crush is urs , 100% approved!!!"
+
+            size_hint: 1, 0.8
+            text_size: self.size
+            font_size: 16
+            halign: 'center'
+            valign: 'middle'
+            font_name : "chiller"
+
+            color : (1,1,1,1)
+        Label:
+            text : "use one of these pickups and ur crush is urs , 100% approved!!!"
+
+            size_hint: 1.005, 0.8
+            text_size: self.size
+            font_size: 16
+            halign: 'center'
+            valign: 'middle'
+            font_name : "chiller"
+
+            color : (1,0,1,1)
+
+
+        Image:
+            source: "Alert.png"
+            keep_ratio: False
+            size_hint_y: 0.2
+            size_hint_x: 1
+
+
+
+        RoundedButton:
+            text:"let's start flerting lmao"
+            font_size : 14
+            color : 0,0,0,1
+            pos_hint: {"x":0.2, "top":0.55}
+            size_hint : 0.6, 0.1
+            on_press:
+                root.manager.current = 'second_window'
+
+
+
+
+
+
+
+
+<SecondWindow>:
+    name : "second_window"
+    id : second_window
+    ScrollView:
+        pos_hint: {"top": 1}
+        do_scroll_y: True
+        size_hint: 1, 1
+
+        GridLayout:
+
+
+            rows: 30
+            size_hint : 1, 0.9
+
+            canvas.before:
+                Color :
+                    rgba : (.9,.9,.9,1)
+                Rectangle:
+                    pos : self.pos
+                    size : self.size
+
+
+
+            size_hint_y: None
+            height : self.minimum_height
+            row_default_height :'90dp'
+            row_force_default: True
+
+
+            Label:
+                back_color:0,1,1,.6
+                canvas.before:
+                    Color:
+                        rgba: self.back_color
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "click to copy!!"
+
+                background_color : 1,1,1,0.8
+
+
+                font_size : 12
+                font_name : "forte"
+                color: 1,1,1,1
+
+
+
+
+
+            Button:
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Hey, my name's Microsft.Can I crash at your place tonight?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+
+
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "R u a bank loan?....Because u have my interest!"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+
+
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Do u have a sunburn, or r u always this hot?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+
+
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "R u Google?   Because u have everything i'm searching for."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "If you were a Transformer… you’d be Optimus Fine."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Aside from being sexy, what do you do for a living?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+
+
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Are you from Tennessee? Because you're the only 10 I see!"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "If I could rearrange the alphabet, I’d put ‘U’ and ‘I’ together."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "There is something wrong with my cell phone. It doesn't have your number in it."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "You must be tired because you've been running through my mind all night."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Is this the Hogwarts Express? Because it feels like you and I are headed somewhere magical."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "I’m learning about important dates in history. Wanna be one of them?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Did your license get suspended for driving all these guys crazy?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "I'm no photographer, but I can picture us together."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Baby, if you were words on a page, you’d be fine print."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Do you like raisins? How do you feel about a date?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Are you a parking ticket? Because you’ve got FINE written all over you."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Do you believe in love at first sight—or should I walk by again?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Well, here I am. What are your other two wishes?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Know what’s on the menu? Me ‘n’ u."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Did you invent the airplane? Because you seem just Wright!"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "They say nothing lasts forever—so would you be my nothing?"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Are you a charger? Because I’m dying without you!"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Even in zero gravity, I would still fall for you!"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Did it hurt?......when you fell from heaven"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Are you Wifi because I'm feeling a connection"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "Are you http? Because without you im just ://"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "I ought to complain to Spotify for you not being named this week’s hottest single."
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+            Button:
+                id : pick_up
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1,0.1) if self.state=='normal' else (1,1,1,1)  # visual feedback of press
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                text: "If you were a vegetable, you’d be a ‘cute-cumber.’"
+                background_color: 1, 1, 1, 0.1
+
+
+                text_size : root.width - 20, None
+                font_size : 14
+                font_name : "corbel"
+                color: 0,0,0,1
+                on_release:
+                    Clipboard.copy(self.text)
+<RoundedButton@Button>:
+    size_hint: (None, None)
+    size: (50, 50)
+    background_color: 0,0,0,0  # alpha=0
+    canvas.before:
+        Color:
+            rgba: (0.4,1,1,0.9) if self.state=='normal' else (1,0.3,0.8,0.9)  # visual feedback of press
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [self.size[1]//2]
+
+
+
+
+
+
